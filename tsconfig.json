@@ -5,9 +5,7 @@
     "lib": ["DOM", "ES2020"],
     "strict": true,
     "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
-    "rootDir": ".",
-    "outDir": "dist"
+    "forceConsistentCasingInFileNames": true
   },
   "include": ["script.ts"]
 }
