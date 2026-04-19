@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quote Postcard Generator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Galada&family=Mina:wght@400;700&family=Noto+Sans+Bengali:wght@400;500;700&family=Noto+Serif+Bengali:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="page">
+    <section class="panel">
+      <label class="field" for="quoteInput">
+        <textarea id="quoteInput" placeholder="এখানে তোমার উক্তি লিখো..."></textarea>
+      </label>
+
+      <button id="downloadButton" class="download-button" type="button">Image Download</button>
+    </section>
+
+    <section class="preview-wrap" aria-label="Generated postcard preview">
+      <article class="postcard" id="postcard">
+        <div class="overlay"></div>
+        <div class="postcard-content">
+          <p class="quote-text" id="quotePreview"></p>
+          <p class="author-name">—আদনান হোসেন</p>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script type="module" src="dist/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,176 @@
+:root {
+  --bg: #0b0d12;
+  --panel: rgba(15, 18, 26, 0.88);
+  --panel-border: rgba(255, 255, 255, 0.1);
+  --text: #f4f1e8;
+  --accent: #d6b36a;
+  --shadow: 0 24px 80px rgba(0, 0, 0, 0.38);
+  --card-image: url("https://images.pexels.com/photos/1258333/pexels-photo-1258333.jpeg");
+  --overlay: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75));
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Noto Sans Bengali", "Hind Siliguri", "Segoe UI", sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at top, rgba(214, 179, 106, 0.12), transparent 30%),
+    linear-gradient(180deg, #111521, #07080d 58%, #040507);
+}
+
+.page {
+  width: min(1040px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 32px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  align-items: center;
+}
+
+.panel {
+  width: min(100%, 620px);
+  padding: 22px;
+  border: 1px solid var(--panel-border);
+  border-radius: 24px;
+  background: var(--panel);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(14px);
+}
+
+.field {
+  display: block;
+}
+
+.field textarea {
+  width: 100%;
+  min-height: 140px;
+  resize: vertical;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 20px;
+  padding: 18px 18px 20px;
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text);
+  font: inherit;
+  line-height: 1.75;
+  outline: none;
+}
+
+.field textarea:focus {
+  border-color: rgba(214, 179, 106, 0.65);
+  box-shadow: 0 0 0 4px rgba(214, 179, 106, 0.12);
+}
+
+.download-button {
+  margin-top: 20px;
+  width: 100%;
+  border: 0;
+  border-radius: 999px;
+  padding: 16px 22px;
+  font: inherit;
+  font-weight: 700;
+  color: #15120d;
+  background: linear-gradient(135deg, #f2d089, #d7a74c);
+  cursor: pointer;
+  transition:
+    transform 160ms ease,
+    box-shadow 160ms ease;
+  box-shadow: 0 18px 32px rgba(215, 167, 76, 0.28);
+}
+
+.download-button:hover {
+  transform: translateY(-2px);
+}
+
+.preview-wrap {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.postcard {
+  position: relative;
+  width: min(100%, 620px);
+  aspect-ratio: 4 / 5;
+  border-radius: 32px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  background-image: var(--overlay), var(--card-image);
+  background-size: cover;
+  background-position: center;
+  isolation: isolate;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(0, 0, 0, 0.75), transparent 85%),
+    linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.28));
+  z-index: 0;
+}
+
+.postcard-content {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  padding: clamp(28px, 5vw, 52px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.quote-text {
+  margin: 0;
+  align-self: center;
+  max-width: 78%;
+  font-family: "Mina", "Noto Sans Bengali", sans-serif;
+  font-size: clamp(1.1rem, 2.1vw, 1.5rem);
+  line-height: 1.6;
+  font-weight: 400;
+  text-align: center;
+}
+
+.author-name {
+  align-self: flex-end;
+  margin: 42px 0 0;
+  font-family: "Galada", "Noto Serif Bengali", serif;
+  font-size: clamp(0.8rem, 1.2vw, 1.1rem);
+  font-weight: 200;
+  letter-spacing: 0.01em;
+  color: white;
+  text-align: right;
+  text-shadow: 0 10px 18px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 920px) {
+  .page {
+    padding: 18px 0 32px;
+  }
+}
+
+@media (max-width: 560px) {
+  .page {
+    width: min(100% - 18px, 100%);
+    gap: 18px;
+  }
+
+  .panel {
+    padding: 20px;
+    border-radius: 22px;
+  }
+
+  .postcard {
+    border-radius: 24px;
+  }
+
+  .quote-text {
+    max-width: 86%;
+  }
+}
