@@ -31,17 +31,25 @@ async function downloadCard(): Promise<void> {
     await document.fonts.ready;
   }
 
-  const cardCanvas = await html2canvas(postcard, {
-    useCORS: true,
-    allowTaint: false,
-    backgroundColor: null,
-    scale: 3
-  });
+  const previousBorderRadius = postcard.style.borderRadius;
 
-  const link = document.createElement("a");
-  link.href = cardCanvas.toDataURL("image/png");
-  link.download = "quote-postcard.png";
-  link.click();
+  postcard.style.borderRadius = "0";
+
+  try {
+    const cardCanvas = await html2canvas(postcard, {
+      useCORS: true,
+      allowTaint: false,
+      backgroundColor: null,
+      scale: 3
+    });
+
+    const link = document.createElement("a");
+    link.href = cardCanvas.toDataURL("image/png");
+    link.download = "quote-postcard.png";
+    link.click();
+  } finally {
+    postcard.style.borderRadius = previousBorderRadius;
+  }
 }
 
 quoteInput.addEventListener("input", updatePreview);
