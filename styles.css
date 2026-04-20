@@ -5,8 +5,8 @@
   --text: #f4f1e8;
   --accent: #d6b36a;
   --shadow: 0 24px 80px rgba(0, 0, 0, 0.38);
-  --card-image: url("https://images.pexels.com/photos/1258333/pexels-photo-1258333.jpeg");
-  --overlay: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75));
+  --card-image: url("https://res.cloudinary.com/de5yqonxh/image/upload/v1776659354/photocard_d1fnup.avif");
+  --overlay: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
 }
 
 * {
